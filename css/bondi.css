@@ -84,3 +84,42 @@ Navbar
 .features .feat h1{
     color: var(--dark-color);
 }
+.works{
+    background-color: #F3F3F3;
+}
+.works ul .active{
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+.works ul li {
+    padding: 0.6rem;
+    cursor: pointer;
+}
+.works ul li:not(.active):hover{
+    color: var(--red-color);
+}
+
+.works .box{
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.works .box:before{
+    content: attr(data-work);
+    position: absolute;
+    background-color: rgb(255 255 204 / 75%);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--dark-color);
+    transition: 0.3s;
+    font-size: 1.5rem;
+    transform: translateX(calc(-100% - 5px));
+}
+
+.works .box:hover::before{
+    transform: translateX(0);
+}
